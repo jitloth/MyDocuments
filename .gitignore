@@ -163,5 +163,5 @@ pip-log.txt
 .DS_Store
 
 # tex
-.log
-.synctex.gz
+*.log
+*.synctex.gz
