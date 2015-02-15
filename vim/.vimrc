@@ -94,3 +94,6 @@ function EnterJudgement()
     else
         return "\<CR>"
 endfunc
+
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
