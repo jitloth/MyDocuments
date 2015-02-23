@@ -64,6 +64,8 @@ function TrimWhiteSpace()
 	:"
 endfunc
 
+noremap <F3> :%s///gn<CR>
+
 inoremap ( ()<esc>i
 inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap { {}<esc>i
