@@ -66,6 +66,15 @@ endfunc
 
 noremap <F3> :%s///gn<CR>
 
+xnoremap * :<c-u>call <SID>VSetSearch()<CR>/<c-r>=@/<CR><CR>
+xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<c-r>=@/<CR><CR>
+function! s:VSetSearch()
+    let temp = @s
+    norm! gv"sy
+    let @/ = '\V' . substitute(escape(@s, getcmdtype().'\'), '\n', '\\n', 'g')
+    let @s = temp
+endfunc
+
 inoremap ( ()<esc>i
 inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap { {}<esc>i
